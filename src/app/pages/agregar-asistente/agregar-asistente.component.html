@@ -1,0 +1,63 @@
+<div class="col-md-6">
+    <h2 class="text-center">Agregar Asistente</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input formControlName="dni" placeholder="dni" name="dni" class="form-control" id="dni">
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" id="apellido">
+        </div>
+
+        <div class="form-group">
+            <label for="provincia">Provincia:</label>
+            <input formControlName="provincia" placeholder="Provincia" name="provincia" class="form-control" id="provincia">
+        </div>
+
+        <div class="form-group">
+            <label for="localidad">Localidad:</label>
+            <input formControlName="localidad" placeholder="Localidad" name="localidad" class="form-control" id="localidad">
+        </div>
+
+        <div class="form-group">
+            <label for="jurisdiccion">Institución:</label>
+            <input formControlName="jurisdiccion" placeholder="Institución" name="jurisdiccion" class="form-control" id="jurisdiccion">
+        </div>
+
+        <div class="form-group">
+            <label for="Cargo">Cargo:</label>
+            <input formControlName="cargo" placeholder="cargo" name="cargo" class="form-control" id="cargo">
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Telefono:</label>
+            <input formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono">
+        </div>
+
+        <div class="form-group">
+            <label for="celular_1">Celular_1:</label>
+            <input formControlName="celular_1" placeholder="Celular_1" name="celular_1" class="form-control" id="celular_1">
+        </div>
+
+        <div class="form-group">
+            <label for="celular_2">Celular_2:</label>
+            <input formControlName="celular_2" placeholder="Celular_2" name="celular_2" class="form-control" id="celular_2">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+
+
+        <button class="btn btn-success">Agregar</button>
+    </form>
+</div>

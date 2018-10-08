@@ -1,0 +1,67 @@
+<h2> Lista Asistentes</h2>
+
+<button class="btn btn-danger" (click)="agregarAsistente()">Agregar Asistente</button>
+<br>
+<!-- <div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               
+                <th>DNI</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Provincia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let asistente of asistentes">
+                
+                <td>{{asistente.dni}}</td>
+                <td>{{asistente.apellido}}</td>
+                <td>{{asistente.nombre}}</td>
+                <td>{{asistente.provincia}}</td>
+                <td><button class="btn btn-danger" (click)="borrarAsistente(asistente)"> Borrar</button>
+                    <button class="btn btn-danger" (click)="editarAsistente(asistente)"> Editar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+
+<p-table #dt [columns]="colsAsist" [value]="asistentes" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Filtro" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+            <th style="width:11em"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-car let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{car[col.field]}}
+            </td>
+            <td>
+                <button pButton label="Ver" (click)="selectAsistenteVer(car)"></button>
+                <span style="display:inline-block; width: 3px;"></span>
+                <button pButton label="Editar" class="ui-button-warning" (click)="selectAsistenteVer(car)"></button>
+            </td>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-file-o" iconPos="left" label="Exportar" (click)="dt.exportCSV()" style="float:left"></button>
+            <!-- <button type="button" pButton icon="fa fa-file" iconPos="left" label="Selection Only" (click)="dt.exportCSV({selectionOnly:true})" style="float:right"></button> -->
+        </div>
+        Hay {{asistentes?.length}} Asistentes
+    </ng-template>
+</p-table>
