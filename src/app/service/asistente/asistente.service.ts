@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Asistente } from '../model/asistente.model';
-import { URL_SERVICIOS } from '../config/config';
+import { Asistente } from '../../model/asistente.model';
+import { URL_SERVICIOS } from '../../config/config';
 
 @Injectable()
 export class AsistenteService {

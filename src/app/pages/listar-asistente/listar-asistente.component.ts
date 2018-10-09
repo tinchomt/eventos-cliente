@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Router} from "@angular/router";
-import { AsistenteService } from '../../service/asistente.service';
+import { AsistenteService } from '../../service/service.index';
 import { Asistente } from '../../model/asistente.model';
 
 @Component({

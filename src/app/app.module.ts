@@ -9,15 +9,17 @@ import { routing } from './app.routing';
 import {ReactiveFormsModule} from "@angular/forms";
 
 import {HttpClientModule} from "@angular/common/http";
-import { AuthenticationService } from './service/auth.service';
-import { AsistenteService } from './service/asistente.service';
+import { AsistenteService } from './service/asistente/asistente.service';
 // import { ButtonModule } from 'primeng/button';
 // import {PanelModule} from 'primeng/panel';
 // import { TableModule } from 'primeng/table';
-import { EventoService } from './service/evento.service';
+import { EventoService } from './service/evento/evento.service';
 import { PagesModule } from './pages/pages.module';
-import { UsuarioLogin } from './model/usuarioLogin.model';
-import { UsuarioService } from './service/usuario.service';
+import { UsuarioService } from './service/usuario/usuario.service';
+
+//Servicios
+import { ServiceModule } from './service/service.module';
+
 
 
 @NgModule({
@@ -32,11 +34,12 @@ import { UsuarioService } from './service/usuario.service';
     routing,
     ReactiveFormsModule,
     HttpClientModule,
+    ServiceModule
     // ButtonModule,
     // PanelModule,
     // TableModule
   ],
-  providers: [AuthenticationService, AsistenteService, EventoService, UsuarioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

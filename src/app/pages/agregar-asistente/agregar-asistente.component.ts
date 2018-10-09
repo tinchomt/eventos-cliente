@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {first} from "rxjs/operators";
 import {Router} from "@angular/router";
-import { AsistenteService } from '../../service/asistente.service';
+import { AsistenteService } from '../../service/service.index';
 
 @Component({
   selector: 'app-agregar-asistente',

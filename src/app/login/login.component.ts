@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {first} from "rxjs/operators";
-import {AuthenticationService} from "../service/auth.service";
-import { UsuarioService } from '../service/usuario.service';
+import { UsuarioService } from '../service/service.index';
 import { UsuarioLogin } from '../model/usuarioLogin.model';
 
 @Component({

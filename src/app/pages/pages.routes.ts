@@ -5,6 +5,7 @@ import { ListarAsistenteComponent } from './listar-asistente/listar-asistente.co
 import { EditarAsistenteComponent } from './editar-asistente/editar-asistente.component';
 import { VerAccesosComponent } from './ver-accesos/ver-accesos.component';
 import { VerEventoComponent } from './eventos/ver-evento/ver-evento.component';
+import { LoginGuardGuard } from '../service/service.index';
 
 
 
@@ -12,6 +13,7 @@ const pagerRoutes: Routes = [
     {
       path: '',
       component: PagesComponent,
+      canActivate:[LoginGuardGuard],
       children: [
   
         { path: 'agregar-asistente', component: AgregarAsistenteComponent },
