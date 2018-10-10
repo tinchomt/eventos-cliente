@@ -29,4 +29,21 @@ export class VerEventoComponent implements OnInit {
     });
   }
 
+
+  seleccionarEvento(evento:Evento){
+
+    console.log("selecccionarEvento: "+evento.descripcion);
+
+    localStorage.removeItem("evento");
+    // localStorage.removeItem("id_evento");
+    // localStorage.removeItem("evento_nombre");
+
+    // localStorage.setItem("id_evento", evento.id_evento.toString());
+    // localStorage.setItem("evento_nombre", evento.descripcion);
+
+    localStorage.setItem("evento", JSON.stringify(evento));
+    
+    this.router.navigate(['/listar-asistente']);
+  }
+
 }
