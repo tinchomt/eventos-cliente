@@ -35,31 +35,26 @@
 
 </div>
 
-<button type="button" class="btn btn-success">
+<button type="button" (click)="agregarEvento()" class="btn btn-success">
   Nuevo Evento
 </button>
 <hr/>
 <div class="card-columns" *ngIf="eventos.length > 0 && !cargando">
 
     <div class="card shadow-sm animated  fadeIn fast" style="width:300px" *ngFor="let event of eventos; let i = index">
-        <!-- <img class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar3.png"
-      class="ml-3 mt-3 rounded-circle" style="width:60px;"> -->
+
         <h5 class="card-header text-center"><i class="fas fa-calendar"></i> {{event.descripcion}}</h5>
         <div class="card-body">
-            <!-- <h5 class="card-title">Nombre: {{persona.razon_social}}</h5> -->
             <p class="card-text">
                 <b>Fecha Inicio:</b> {{event.fecha_inicio | date: 'dd/MM/yyyy'}}<br/>
                 <b>Fecha Fin:</b> {{event.fecha_fin | date: 'dd/MM/yyyy'}}<br/>
             </p>
-            <!-- <a [routerLink]="['/personaF/', persona.nume_docu, persona.sexo]" class="btn btn-primary">
-         Ver Informe
-      </a> -->
+
 
             <button type="button" (click)="seleccionarEvento(event)" class="btn btn-primary">
-              Seeccionar
+              Seleccionar
             </button>
 
-            <!-- <a [routerLink]="['/heroe',i]"  class="btn btn-outline-primary"> Ver más Link ...</a> -->
 
         </div>
     </div>

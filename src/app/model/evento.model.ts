@@ -1,8 +1,11 @@
 export class Evento{
 
-    id_evento:number;
-    descripcion:string;
-    fecha_inicio:Date;
-    fecha_fin:Date;
+    constructor(
+        public id_evento:number,
+        public descripcion:string,
+        public fecha_inicio:Date,
+        public fecha_fin:Date,
+        public id_grupo:number
+        ){}
     
 }

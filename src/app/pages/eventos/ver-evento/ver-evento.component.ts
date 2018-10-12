@@ -46,4 +46,8 @@ export class VerEventoComponent implements OnInit {
     this.router.navigate(['/listar-asistente']);
   }
 
+  agregarEvento(){
+    this.router.navigate(["agregar-evento"]);
+  }
+
 }

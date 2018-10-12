@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {first} from "rxjs/operators";
 import {Router} from "@angular/router";
-import { AsistenteService, AccesosService } from '../../service/service.index';
-import { Evento } from '../../model/evento.model';
-import { RegistraAcceso } from '../../model/registraAcceso.model';
+import { AsistenteService, AccesosService } from '../../../service/service.index';
+import { Evento } from '../../../model/evento.model';
+import { RegistraAcceso } from '../../../model/registraAcceso.model';
 
 @Component({
   selector: 'app-agregar-asistente',

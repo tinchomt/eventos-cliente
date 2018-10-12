@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Router} from "@angular/router";
-import { AsistenteService } from '../../service/service.index';
-import { Asistente } from '../../model/asistente.model';
-import { Evento } from '../../model/evento.model';
+import { AsistenteService } from '../../../service/service.index';
+import { Asistente } from '../../../model/asistente.model';
+import { Evento } from '../../../model/evento.model';
 
 @Component({
   selector: 'app-listar-asistente',

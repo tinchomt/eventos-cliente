@@ -1,0 +1,34 @@
+<div class="col-md-6">
+    <h2 class="text-center">Agregar Evento</h2>
+    <form [formGroup]="addEventoForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <input type="text" formControlName="descripcion" placeholder="Descripcion" name="descripcion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }" id="descripcion">
+
+            <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                <div *ngIf="f.descripcion.errors.required">Ingrese la Descripción</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_inicio">Fecha Inicio:</label>
+            <input type="date" formControlName="fecha_inicio" placeholder="Fecha Inicio" name="fecha_inicio" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fecha_inicio.errors }" id="fecha_inicio">
+
+            <div *ngIf="submitted && f.fecha_inicio.errors" class="invalid-feedback">
+                <div *ngIf="f.fecha_inicio.errors.required">Ingrese la Fecha Inicio</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_fin">Fecha Fin:</label>
+            <input type="date" formControlName="fecha_fin" placeholder="Fecha Fin" name="fecha_fin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fecha_fin.errors }" id="fecha_fin">
+
+            <div *ngIf="submitted && f.fecha_fin.errors" class="invalid-feedback">
+                <div *ngIf="f.fecha_fin.errors.required">Ingrese la Fecha Fin</div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-success">Agregar</button>
+    </form>
+</div>
