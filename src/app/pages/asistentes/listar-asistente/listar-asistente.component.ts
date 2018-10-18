@@ -32,7 +32,9 @@ export class ListarAsistenteComponent implements OnInit {
       return;
     }
 
-    this.asistenteService.getAsistentes().subscribe(data => {
+    let id_grupo = localStorage.getItem('id_grupo');
+
+    this.asistenteService.getAsistentesPorIdGrupo(id_grupo).subscribe(data => {
     
       console.log(data);
       this.asistentes = data;

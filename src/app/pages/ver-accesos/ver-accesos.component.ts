@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Accesos } from '../../model/accesos.model';
 import { AccesosService } from '../../service/service.index';
 import { Router } from '@angular/router';
+import { Evento } from 'src/app/model/evento.model';
 
 @Component({
   selector: 'app-ver-accesos',
@@ -25,11 +26,23 @@ export class VerAccesosComponent implements OnInit {
   listaAccesos:Accesos[];
   colsAccesos:any[];
 
+  evento:Evento;
+
   constructor(private router:Router, private accesosService:AccesosService) { }
 
   ngOnInit() {
 
-    this.accesosService.getAccesos().subscribe(data => {
+    this.evento = JSON.parse(localStorage.getItem("evento"));
+
+    if(!this.evento){
+      alert("Debe Seleccionar un Evento");
+      this.router.navigate(['/ver-evento']);
+      return;
+    }
+
+    let id_grupo = localStorage.getItem('id_grupo');
+
+    this.accesosService.getAccesosPorGrupoyEvento(id_grupo,this.evento.id_evento).subscribe(data => {
     
       console.log(data);
       this.listaAccesos = data;

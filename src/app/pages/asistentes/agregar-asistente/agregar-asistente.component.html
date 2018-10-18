@@ -7,18 +7,30 @@
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
-            <label for="dni">DNI:</label>
-            <input formControlName="dni" placeholder="dni" name="dni" class="form-control" id="dni">
+            <label for="dni">DNI*:</label>
+            <input formControlName="dni" placeholder="dni" name="dni" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.dni.errors }" id="dni">
+            <div *ngIf="submitted && g.dni.errors" class="invalid-feedback">
+                <div *ngIf="g.dni.errors.required">Ingrese el DNI</div>
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre">
+            <label for="nombre">Nombre*:</label>
+            <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.nombre.errors }" id="nombre">
+
+            <div *ngIf="submitted && g.nombre.errors" class="invalid-feedback">
+                <div *ngIf="g.nombre.errors.required">Ingrese el Nombre</div>
+            </div>
         </div>
 
         <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" id="apellido">
+            <label for="apellido">Apellido*:</label>
+            <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.apellido.errors }" id="apellido">
+
+            <div *ngIf="submitted && g.apellido.errors" class="invalid-feedback">
+                <div *ngIf="g.apellido.errors.required">Ingrese el Apellido</div>
+            </div>
+
         </div>
 
         <div class="form-group">
@@ -32,8 +44,13 @@
         </div>
 
         <div class="form-group">
-            <label for="jurisdiccion">Institución:</label>
-            <input formControlName="jurisdiccion" placeholder="Institución" name="jurisdiccion" class="form-control" id="jurisdiccion">
+            <label for="jurisdiccion">Institución*:</label>
+            <input formControlName="jurisdiccion" placeholder="Institución" name="jurisdiccion" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="jurisdiccion">
+
+            <div *ngIf="submitted && g.jurisdiccion.errors" class="invalid-feedback">
+                <div *ngIf="g.jurisdiccion.errors.required">Ingrese Institución</div>
+            </div>
+
         </div>
 
         <div class="form-group">
@@ -57,8 +74,13 @@
         </div>
 
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+            <label for="email">Email*:</label>
+            <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="email">
+
+            <div *ngIf="submitted && g.email.errors" class="invalid-feedback">
+                <div *ngIf="g.email.errors.required">Ingrese email</div>
+            </div>
+
         </div>
 
 

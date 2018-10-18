@@ -1,15 +1,17 @@
 export class Asistente{
 
-    dni:number;
-    apellido:string;
-    nombre:string;
-    provincia:string;
-    localidad:string;
-    jurisdiccion:string;
-    cargo:string;
-    telefono:string;
-    celular_1:string;
-    celular_2:string;
-    email:string;
-
+    constructor( 
+        public dni:number,
+        public apellido:string,
+        public nombre:string,
+        public provincia:string,
+        public localidad:string,
+        public jurisdiccion:string,
+        public cargo:string,
+        public telefono:string,
+        public celular_1:string,
+        public celular_2:string,
+        public email:string,
+        public id_grupo:number
+        ){}
 }

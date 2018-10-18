@@ -10,6 +10,8 @@ export class AsistenteService {
 
   baseUrl:string = URL_SERVICIOS+"/asistentes";
 
+  baseUrlAsistentePorGrupo:string = URL_SERVICIOS+"/asistentes"+"/porgrupo/";
+
 
   constructor(private http: HttpClient) { }
 
@@ -34,5 +36,9 @@ export class AsistenteService {
   borrarAsistente(dni:number){
     return this.http.delete(this.baseUrl + '/' + dni);
 
+  }
+
+  getAsistentesPorIdGrupo(id_grupo:any){
+    return this.http.get<Asistente[]>(this.baseUrlAsistentePorGrupo+id_grupo);
   }
 }

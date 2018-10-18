@@ -38,6 +38,7 @@ export class UsuarioService {
     localStorage.removeItem('id_usuario');
     localStorage.removeItem('id_grupo');
     localStorage.removeItem('login');
+    localStorage.removeItem('evento');
 
     this.router.navigate(['/login']);
    }

@@ -20,7 +20,9 @@ export class VerEventoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.eventoService.getEventos().subscribe(data => {
+    let id_grupo = localStorage.getItem('id_grupo');
+
+    this.eventoService.getEventosPorIdGrupo(id_grupo).subscribe(data => {
 
       console.log(data);
       this.eventos = data;
