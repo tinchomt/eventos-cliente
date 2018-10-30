@@ -4,7 +4,7 @@
 </div>
 
 <button class="btn btn-danger" (click)="agregarAsistente()">Agregar Asistente</button>
-<br>
+<hr/>
 <!-- <div class="row">
     <table class="table table-striped">
         <thead>
@@ -44,7 +44,7 @@
             <th *ngFor="let col of columns">
                 {{col.header}}
             </th>
-            <th style="width:11em"></th>
+            <th style="width:12em"></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-car let-columns="columns">
@@ -53,9 +53,9 @@
                 {{car[col.field]}}
             </td>
             <td>
-                <button pButton label="Ver" (click)="selectAsistenteVer(car)"></button>
+                <button pButton label="Asignar" (click)="selectAsistenteVer(car)"></button>
                 <span style="display:inline-block; width: 3px;"></span>
-                <button pButton label="Editar" class="ui-button-warning" (click)="selectAsistenteVer(car)"></button>
+                <button pButton label="Editar" class="ui-button-warning" (click)="editarAsistente(car)"></button>
             </td>
 
         </tr>

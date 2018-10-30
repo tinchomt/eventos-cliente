@@ -53,7 +53,17 @@ export class ListarAsistenteComponent implements OnInit {
 
   borrarAsistente(){}
 
-  editarAsistente(){}
+  editarAsistente(asist: Asistente){
+    this.selectAsistente = asist;
+    console.log("editarAsistente "+asist.dni);
+    //this.messageService.add({severity:'info', summary:'Asistente Selected', detail:'DNI: ' + asist.dni});
+
+    localStorage.removeItem("dniAsist");
+    localStorage.setItem("dniAsist", asist.dni.toString());
+    this.router.navigate(['editar-asistente']);
+
+    console.log("editarAsistente 2"+asist.dni);
+  }
 
   agregarAsistente(){
 
@@ -67,5 +77,6 @@ export class ListarAsistenteComponent implements OnInit {
 
     console.log(asist.dni);
 }
+
 
 }

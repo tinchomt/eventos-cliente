@@ -18,6 +18,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{SharedModule} from '../shared/shared.module';
 import { PAGES_ROUTES } from "./pages.routes";
 import { AgregarEventoComponent } from './eventos/agregar-evento/agregar-evento.component';
+import { PendientesComponent } from './ver-accesos/pendientes/pendientes.component';
+import { IngresadosComponent } from './ver-accesos/ingresados/ingresados.component';
+import { AsistentesEventoComponent } from './dashboard/asistentes-evento/asistentes-evento.component';
+
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -28,7 +33,10 @@ import { AgregarEventoComponent } from './eventos/agregar-evento/agregar-evento.
         ListarAsistenteComponent,
         VerAccesosComponent,
         VerEventoComponent,
-        AgregarEventoComponent
+        AgregarEventoComponent,
+        PendientesComponent,
+        IngresadosComponent,
+        AsistentesEventoComponent
         
     ],
     exports: [
@@ -37,7 +45,10 @@ import { AgregarEventoComponent } from './eventos/agregar-evento/agregar-evento.
         EditarAsistenteComponent,
         ListarAsistenteComponent,
         VerAccesosComponent,
-        VerEventoComponent
+        VerEventoComponent,
+        AgregarEventoComponent,
+        PendientesComponent,
+        IngresadosComponent
        
     ],
     imports: [
@@ -48,6 +59,7 @@ import { AgregarEventoComponent } from './eventos/agregar-evento/agregar-evento.
         PanelModule,
         TableModule,
         SharedModule,
+        ChartsModule,
         PAGES_ROUTES
        
     ]

@@ -1,85 +1,117 @@
 <div class="alert alert-info" role="alert">
     Evento Asignado: <b> {{evento.descripcion}}</b>
 </div>
-<div class="col-md-6">
+<div class="col-md-10">
 
     <h2 class="text-center">Agregar Asistente</h2>
+    <hr/>
     <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
-        <div class="form-group">
-            <label for="dni">DNI*:</label>
-            <input formControlName="dni" placeholder="dni" name="dni" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.dni.errors }" id="dni">
-            <div *ngIf="submitted && g.dni.errors" class="invalid-feedback">
-                <div *ngIf="g.dni.errors.required">Ingrese el DNI</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="nombre">Nombre*:</label>
-            <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.nombre.errors }" id="nombre">
-
-            <div *ngIf="submitted && g.nombre.errors" class="invalid-feedback">
-                <div *ngIf="g.nombre.errors.required">Ingrese el Nombre</div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="apellido">Apellido*:</label>
-            <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.apellido.errors }" id="apellido">
-
-            <div *ngIf="submitted && g.apellido.errors" class="invalid-feedback">
-                <div *ngIf="g.apellido.errors.required">Ingrese el Apellido</div>
+        <div class="form-group row">
+            <label for="dni" class="col-sm-4 col-form-label">DNI*:</label>
+            <div class="col-sm-8">
+                <input formControlName="dni" placeholder="dni" name="dni" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.dni.errors }" id="dni">
+                <div *ngIf="submitted && g.dni.errors" class="invalid-feedback">
+                    <div *ngIf="g.dni.errors.required">Ingrese el DNI</div>
+                </div>
             </div>
 
         </div>
 
-        <div class="form-group">
-            <label for="provincia">Provincia:</label>
-            <input formControlName="provincia" placeholder="Provincia" name="provincia" class="form-control" id="provincia">
-        </div>
+        <div class="form-group row">
+            <label for="nombre" class="col-sm-4 col-form-label">Nombre*:</label>
+            <div class="col-sm-8">
+                <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.nombre.errors }" id="nombre">
 
-        <div class="form-group">
-            <label for="localidad">Localidad:</label>
-            <input formControlName="localidad" placeholder="Localidad" name="localidad" class="form-control" id="localidad">
-        </div>
-
-        <div class="form-group">
-            <label for="jurisdiccion">Institución*:</label>
-            <input formControlName="jurisdiccion" placeholder="Institución" name="jurisdiccion" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="jurisdiccion">
-
-            <div *ngIf="submitted && g.jurisdiccion.errors" class="invalid-feedback">
-                <div *ngIf="g.jurisdiccion.errors.required">Ingrese Institución</div>
+                <div *ngIf="submitted && g.nombre.errors" class="invalid-feedback">
+                    <div *ngIf="g.nombre.errors.required">Ingrese el Nombre</div>
+                </div>
             </div>
 
         </div>
 
-        <div class="form-group">
-            <label for="Cargo">Cargo:</label>
-            <input formControlName="cargo" placeholder="cargo" name="cargo" class="form-control" id="cargo">
-        </div>
+        <div class="form-group row">
+            <label for="apellido" class="col-sm-4 col-form-label">Apellido*:</label>
+            <div class="col-sm-8">
+                <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.apellido.errors }" id="apellido">
 
-        <div class="form-group">
-            <label for="telefono">Telefono:</label>
-            <input formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono">
-        </div>
+                <div *ngIf="submitted && g.apellido.errors" class="invalid-feedback">
+                    <div *ngIf="g.apellido.errors.required">Ingrese el Apellido</div>
+                </div>
 
-        <div class="form-group">
-            <label for="celular_1">Celular_1:</label>
-            <input formControlName="celular_1" placeholder="Celular_1" name="celular_1" class="form-control" id="celular_1">
-        </div>
-
-        <div class="form-group">
-            <label for="celular_2">Celular_2:</label>
-            <input formControlName="celular_2" placeholder="Celular_2" name="celular_2" class="form-control" id="celular_2">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email*:</label>
-            <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="email">
-
-            <div *ngIf="submitted && g.email.errors" class="invalid-feedback">
-                <div *ngIf="g.email.errors.required">Ingrese email</div>
             </div>
+
+        </div>
+
+        <div class="form-group row">
+            <label for="provincia" class="col-sm-4 col-form-label">Provincia:</label>
+            <div class="col-sm-8">
+                <input formControlName="provincia" placeholder="Provincia" name="provincia" class="form-control" id="provincia">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="localidad" class="col-sm-4 col-form-label">Localidad:</label>
+            <div class="col-sm-8">
+                <input formControlName="localidad" placeholder="Localidad" name="localidad" class="form-control" id="localidad">
+            </div>
+
+        </div>
+
+
+        <div class="form-group row">
+            <label for="jurisdiccion" class="col-sm-4 col-form-label">Institución*:</label>
+            <div class="col-sm-8">
+                <input formControlName="jurisdiccion" placeholder="Institución" name="jurisdiccion" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="jurisdiccion">
+
+                <div *ngIf="submitted && g.jurisdiccion.errors" class="invalid-feedback">
+                    <div *ngIf="g.jurisdiccion.errors.required">Ingrese Institución</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <label for="Cargo" class="col-sm-4 col-form-label">Cargo:</label>
+            <div class="col-sm-8">
+                <input formControlName="cargo" placeholder="cargo" name="cargo" class="form-control" id="cargo">
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <label for="telefono" class="col-sm-4 col-form-label">Telefono:</label>
+            <div class="col-sm-8">
+                <input formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="celular_1" class="col-sm-4 col-form-label">Celular_1:</label>
+            <div class="col-sm-8">
+                <input formControlName="celular_1" placeholder="Celular_1" name="celular_1" class="form-control" id="celular_1">
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <label for="celular_2" class="col-sm-4 col-form-label">Celular_2:</label>
+            <div class="col-sm-8">
+                <input formControlName="celular_2" placeholder="Celular_2" name="celular_2" class="form-control" id="celular_2">
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-sm-4 col-form-label">Email*:</label>
+            <div class="col-sm-8">
+                <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && g.jurisdiccion.errors }" id="email">
+
+                <div *ngIf="submitted && g.email.errors" class="invalid-feedback">
+                    <div *ngIf="g.email.errors.required">Ingrese email</div>
+                </div>
+            </div>
+
 
         </div>
 

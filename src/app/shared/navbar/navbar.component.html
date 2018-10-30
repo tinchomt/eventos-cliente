@@ -28,12 +28,12 @@
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" [routerLink]="['/listar-asistente']">Asistentes</a>
                 </li>
-                <li>
-                    <a href="#">Page 2</a>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/agregar-asistente']">Agregar Asistente</a>
                 </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
+
+
+
             </ul>
         </li>
         <li class="nav-item" routerLinkActive="active">
@@ -43,8 +43,22 @@
                     <a class="nav-link" [routerLink]="['/ver-accesos']">Asistentes Anotados</a>
                 </li>
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['/ver-accesos']">Asistentes Ingresados</a>
+                    <a class="nav-link" [routerLink]="['/ver-ingresados']">Asistentes Ingresados</a>
                 </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/ver-pendientes']">Asistentes Pendientes</a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active">
+            <a href="#asistentesDashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-chart-line"></i> Dashboard</a>
+            <ul class="collapse list-unstyled" id="asistentesDashboard">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/asistentes-evento']">Asistentes Estadistica</a>
+                </li>
+
 
             </ul>
         </li>
